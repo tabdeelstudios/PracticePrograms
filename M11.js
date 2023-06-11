@@ -39,10 +39,18 @@ const sum = (a, b, c, d, e) => a + b + c + d + e;
 console.log(sum(...numbers)); // Output: 15
 
 // Arguments Object
-const numbers = [1, 2, 3, 4, 5];
-const sum = (a, b, c, d, e) => a + b + c + d + e;
+function sum() {
+  let total = 0;
+  for (let i = 0; i < arguments.length; i++) {
+    total += arguments[i];
+  }
+  return total;
+}
 
-console.log(sum(...numbers)); // Output: 15
+console.log(sum(1, 2, 3)); // Output: 6
+console.log(sum(4, 5, 6, 7)); // Output: 22
+console.log(sum(10)); // Output: 10
+console.log(sum()); // Output: 0
 
 // Computer Properties
 
